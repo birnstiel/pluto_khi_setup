@@ -51,10 +51,12 @@ void Init (double *v, double x1, double x2, double x3)
 	  v[VX1] = 0.1;
 	  v[VX2] = 0.0;
 	  v[VX3] = 0.0;
+	  v[TRC] = 1.0;
   } else {
 	  v[VX1] = -0.1;
 	  v[VX2] = 0.0;
 	  v[VX3] = 0.0;  
+	  v[TRC] = 0.0;
   }
   
   #if HAVE_ENERGY
