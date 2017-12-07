@@ -43,26 +43,19 @@ void Init (double *v, double x1, double x2, double x3)
 {
   v[RHO] = 1.0;
   
-  double ylim;
+  v[VX1] = 0.5*tanh((x2-0.5)/0.0637);
+  v[VX2] = 0.03*sin(x1*2*CONST_PI);
+  v[VX3] = 0.0;
   
-  ylim = 0.5+0.02*sin(x1*2.0*CONST_PI);
-  
-  if (x2<ylim) {
-	  v[VX1] = 0.1;
-	  v[VX2] = 0.0;
-	  v[VX3] = 0.0;
+  if (x2<0.5) {
 	  v[TRC] = 1.0;
-  } else {
-	  v[VX1] = -0.1;
-	  v[VX2] = 0.0;
-	  v[VX3] = 0.0;  
+  } else { 
 	  v[TRC] = 0.0;
   }
   
   #if HAVE_ENERGY
    v[PRS] = 1.0;
   #endif
-  v[TRC] = 0.0;
 
   #if PHYSICS == MHD || PHYSICS == RMHD
 

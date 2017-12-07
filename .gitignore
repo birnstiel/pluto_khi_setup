@@ -2,4 +2,6 @@
 data*.dbl
 dbl.out
 /.ipynb_checkpoints/
+grid.out
+restart.out
 
